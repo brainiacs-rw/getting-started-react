@@ -45,3 +45,19 @@
     height: 45px;
     font-size: 18px;
 }
+
+.span-container {
+    display: flex;
+    justify-content: center;
+    margin: -24px auto;
+}
+
+.span {
+    display: flex;
+    padding: 8px;
+    background-color: aliceblue;
+}
+
+.divider {
+    padding: 10px;
+}
