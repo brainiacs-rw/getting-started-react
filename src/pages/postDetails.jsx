@@ -2,17 +2,12 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-interface Comment {
-  id: number;
-  name: string;
-  email: string;
-  body: string;
-}
+
 
 function PostDetail() {
-  const { id } = useParams<{ id: string }>();
-  const [post, setPost] = useState<{ title: string; body: string } | null>(null);
-  const [comments, setComments] = useState<Comment[]>([]);
+  const { id } = useParams();  
+  const [post, setPost] = useState(null);
+  const [comments, setComments] = useState([]);
   const navigate = useNavigate(); // Use navigate hook
 
   const goBack = () => {

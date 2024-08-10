@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function Post() {
   const [data, setData] = useState([]);
@@ -24,15 +26,16 @@ function Post() {
   const onSubmit = async (postData) => {
     try {
       if (currentPost) {
-        // Update existing post
         const response = await axios.put(`https://jsonplaceholder.typicode.com/posts/${currentPost.id}`, postData);
         if (response?.status === 200) {
+          toast('Post updated succesfully..', { type: 'success' })
           setData(data.map(post => (post.id === currentPost.id ? response.data : post)));
         }
       } else {
         // Create new post
         const response = await axios.post('https://jsonplaceholder.typicode.com/posts', postData);
         if (response?.status === 201) {
+          toast('Post created succesfully..', { type: 'success' })
           setData([response.data, ...data]);
         }
       }
@@ -41,6 +44,7 @@ function Post() {
       setIsModalOpen(false);
     } catch (error) {
       console.error('Error saving post:', error);
+      toast.error('Something went wrong')
     }
   };
 
@@ -49,6 +53,7 @@ function Post() {
     setIsModalOpen(true);
     reset(post);
   };
+
 
   const handleDelete = async (id) => {
     try {
@@ -61,12 +66,26 @@ function Post() {
     }
   };
 
+
   return (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className='flex justify-end mx-4'>
         <button
           className='rounded-md bg-green-800 py-2 px-4 my-2 text-white flex justify-center items-center'
           onClick={() => {
+            reset()
             setCurrentPost(null);
             setIsModalOpen(true);
           }}
@@ -106,6 +125,7 @@ function Post() {
                 <label className='block mb-2 font-semibold'>Title</label>
                 <input
                   className='border rounded p-2 w-full'
+                  {...register('title', { required: "Title is required" })}
                   {...register('title', { required: 'Title is required' })}
                 />
                 {errors.title && <p className='text-red-500 text-sm'>{errors.title.message}</p>}
