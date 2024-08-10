@@ -1,22 +1,28 @@
 [About react forms]
-- https://www.youtube.com/watch?v=cc_xmawJ8Kg
-- https://react-hook-form.com/docs/useform
+- [React hook form document] https://www.youtube.com/watch?v=cc_xmawJ8Kg
+- [React hook form document] https://react-hook-form.com/docs/useform
+- [React zod validation documentation] https://zod.dev/
+- [Youtube tutorial ZOD] https://www.youtube.com/watch?v=L6BE-U3oy80
 
 [ Apis]
+
 - [What is a rest api]: https://www.youtube.com/watch?v=lsMQRaeKNDk&t=170s
 - [dealing with apis,.. dummy apis] https://jsonplaceholder.typicode.com/guide
-
+- [Api response status codes]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 [All you need to know about Hooks]
-
 - https://www.youtube.com/watch?v=V9i3cGD-mts&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2 
 
 [General]
-
 - [Folder structuring]: https://www.youtube.com/watch?v=ANrYhHN8Dl4
 
 [Advanced]
-
 - [State management- React Query and Zustand]: https://www.youtube.com/watch?v=QTZTUrAbjeo
 - [State management- Redux]: https://www.youtube.com/watch?v=5yEG6GhoJBs
 - [State management- Zustand]: https://www.youtube.com/watch?v=_ngCLZ5Iz-0
+
+
+[Toasters]
+
+-[hot-toast] https://react-hot-toast.com/docs/toaster
+-[react-toastify] [https://fkhadra.github.io/react-toastify/introduction]

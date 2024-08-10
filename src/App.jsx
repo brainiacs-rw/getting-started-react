@@ -5,7 +5,7 @@ import Posts from './pages/post';
 import Contact from './pages/contact';
 import NotFound from './pages/notfound';
 import Navbar from './components/navbar';
-import PostDetail from './pages/postDetails.tsx';
+import PostDetail from './pages/postDetails';
 
 function App() {
   return (
